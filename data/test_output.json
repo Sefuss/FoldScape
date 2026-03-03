@@ -5,8 +5,8 @@
       "name": "alphafold",
       "description": "Open source code for AlphaFold 2.",
       "url": "https://github.com/google-deepmind/alphafold",
-      "stars": 14296,
-      "forks": 2567,
+      "stars": 14299,
+      "forks": 2569,
       "last_updated": "2026-01-15T13:24:56+00:00",
       "created_at": "2021-06-17T14:06:06+00:00",
       "language": "Python",
@@ -26,7 +26,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-02T06:40:49.569323",
+      "first_tracked": "2026-03-03T06:34:58.797193",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -38,8 +38,8 @@
       "name": "alphafold3",
       "description": "AlphaFold 3 inference pipeline.",
       "url": "https://github.com/google-deepmind/alphafold3",
-      "stars": 7653,
-      "forks": 1125,
+      "stars": 7657,
+      "forks": 1126,
       "last_updated": "2026-02-25T14:14:30+00:00",
       "created_at": "2024-11-11T10:38:11+00:00",
       "language": "Python",
@@ -59,7 +59,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-02T06:40:51.114106",
+      "first_tracked": "2026-03-03T06:35:00.353536",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -71,7 +71,7 @@
       "name": "openfold",
       "description": "Trainable, memory-efficient, and GPU-friendly PyTorch reproduction of AlphaFold 2",
       "url": "https://github.com/aqlaboratory/openfold",
-      "stars": 3279,
+      "stars": 3280,
       "forks": 661,
       "last_updated": "2025-12-16T09:41:53+00:00",
       "created_at": "2021-09-14T23:59:02+00:00",
@@ -96,7 +96,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-02T06:40:52.708391",
+      "first_tracked": "2026-03-03T06:35:01.903243",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -110,7 +110,7 @@
       "url": "https://github.com/pachterlab/gget",
       "stars": 1100,
       "forks": 85,
-      "last_updated": "2026-03-01T00:42:12+00:00",
+      "last_updated": "2026-03-02T16:42:02+00:00",
       "created_at": "2022-05-04T17:31:31+00:00",
       "language": "Python",
       "license": "BSD 2-Clause \"Simplified\" License",
@@ -146,7 +146,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-02T06:40:54.313098",
+      "first_tracked": "2026-03-03T06:35:03.479895",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -158,7 +158,7 @@
       "name": "AlphaFold3",
       "description": "Open source implementation of AlphaFold3",
       "url": "https://github.com/Ligo-Biosciences/AlphaFold3",
-      "stars": 1038,
+      "stars": 1039,
       "forks": 88,
       "last_updated": "2024-10-07T02:08:29+00:00",
       "created_at": "2023-11-11T12:42:56+00:00",
@@ -179,7 +179,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-02T06:40:55.820177",
+      "first_tracked": "2026-03-03T06:35:05.037928",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
