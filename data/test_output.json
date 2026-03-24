@@ -5,8 +5,8 @@
       "name": "alphafold",
       "description": "Open source code for AlphaFold 2.",
       "url": "https://github.com/google-deepmind/alphafold",
-      "stars": 14391,
-      "forks": 2588,
+      "stars": 14398,
+      "forks": 2591,
       "last_updated": "2026-03-13T07:16:40+00:00",
       "created_at": "2021-06-17T14:06:06+00:00",
       "language": "Python",
@@ -26,7 +26,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-23T06:55:22.581051",
+      "first_tracked": "2026-03-24T06:49:05.164625",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -38,8 +38,8 @@
       "name": "alphafold3",
       "description": "AlphaFold 3 inference pipeline.",
       "url": "https://github.com/google-deepmind/alphafold3",
-      "stars": 7758,
-      "forks": 1155,
+      "stars": 7763,
+      "forks": 1157,
       "last_updated": "2026-03-10T16:14:16+00:00",
       "created_at": "2024-11-11T10:38:11+00:00",
       "language": "Python",
@@ -59,7 +59,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-23T06:55:24.161949",
+      "first_tracked": "2026-03-24T06:49:06.701889",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -71,7 +71,7 @@
       "name": "openfold",
       "description": "Trainable, memory-efficient, and GPU-friendly PyTorch reproduction of AlphaFold 2",
       "url": "https://github.com/aqlaboratory/openfold",
-      "stars": 3310,
+      "stars": 3314,
       "forks": 665,
       "last_updated": "2025-12-16T09:41:53+00:00",
       "created_at": "2021-09-14T23:59:02+00:00",
@@ -96,7 +96,47 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-23T06:55:25.699258",
+      "first_tracked": "2026-03-24T06:49:08.275053",
+      "star_velocity_7d": 0,
+      "star_velocity_30d": 0,
+      "trending": false
+    }
+  },
+  {
+    "repo_id": "lucidrains/alphafold3-pytorch",
+    "metadata": {
+      "name": "alphafold3-pytorch",
+      "description": "Implementation of Alphafold 3 from Google Deepmind in Pytorch",
+      "url": "https://github.com/lucidrains/alphafold3-pytorch",
+      "stars": 1623,
+      "forks": 215,
+      "last_updated": "2025-09-18T23:30:40+00:00",
+      "created_at": "2024-05-08T15:26:29+00:00",
+      "language": "Python",
+      "license": "MIT License",
+      "topics": [
+        "artificial-intelligence",
+        "deep-learning",
+        "attention-mechanisms",
+        "denoising-diffusion",
+        "transformers",
+        "protein-structure-prediction"
+      ]
+    },
+    "classification": {
+      "category": null,
+      "subcategory": null,
+      "layer": null
+    },
+    "domain_specific": {
+      "experimental_validation": null,
+      "expression_systems": [],
+      "gpu_requirement": null,
+      "input_types": [],
+      "output_formats": []
+    },
+    "tracking": {
+      "first_tracked": "2026-03-24T06:49:09.830482",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -108,9 +148,9 @@
       "name": "gget",
       "description": "🧬 gget enables efficient querying of genomic reference databases",
       "url": "https://github.com/pachterlab/gget",
-      "stars": 1108,
+      "stars": 1109,
       "forks": 85,
-      "last_updated": "2026-03-22T00:40:11+00:00",
+      "last_updated": "2026-03-23T16:31:16+00:00",
       "created_at": "2022-05-04T17:31:31+00:00",
       "language": "Python",
       "license": "BSD 2-Clause \"Simplified\" License",
@@ -146,40 +186,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-03-23T06:55:27.291479",
-      "star_velocity_7d": 0,
-      "star_velocity_30d": 0,
-      "trending": false
-    }
-  },
-  {
-    "repo_id": "Ligo-Biosciences/AlphaFold3",
-    "metadata": {
-      "name": "AlphaFold3",
-      "description": "Open source implementation of AlphaFold3",
-      "url": "https://github.com/Ligo-Biosciences/AlphaFold3",
-      "stars": 1048,
-      "forks": 89,
-      "last_updated": "2024-10-07T02:08:29+00:00",
-      "created_at": "2023-11-11T12:42:56+00:00",
-      "language": "Python",
-      "license": "Apache License 2.0",
-      "topics": []
-    },
-    "classification": {
-      "category": null,
-      "subcategory": null,
-      "layer": null
-    },
-    "domain_specific": {
-      "experimental_validation": null,
-      "expression_systems": [],
-      "gpu_requirement": null,
-      "input_types": [],
-      "output_formats": []
-    },
-    "tracking": {
-      "first_tracked": "2026-03-23T06:55:28.799123",
+      "first_tracked": "2026-03-24T06:49:11.427523",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
