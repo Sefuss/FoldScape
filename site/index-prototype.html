@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoldScape - Prototype</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /*
+         * DESIGN SYSTEM - Mathematical Foundations
+         *
+         * Golden Ratio (φ): 1.618
+         * Typography Scale: 1rem × φ^n = 1, 1.618, 2.618, 4.236
+         * Spacing: Fibonacci-inspired 8px grid = 8, 16, 24, 32, 48, 64, 96
+         *
+         * Hierarchy:
+         *   - UI chrome (nav, labels, badges): 13-14px, light weight
+         *   - Content (data, body): 16px, readable
+         *   - Headings: 1.618rem - 2.618rem, semibold
+         */
+
+        :root {
+            /* Neutral palette - Apple-inspired grays */
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --text-tertiary: #afafb2;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --border-subtle: rgba(0, 0, 0, 0.06);
+
+            /* Accent - subtle, one color family */
+            --accent: #6366f1;
+            --accent-soft: rgba(99, 102, 241, 0.1);
+
+            /* Shadows - depth without heaviness */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+
+            /* Spacing - 8px grid */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+
+            /* Typography scale - Golden Ratio */
+            --text-xs: 0.8125rem;   /* 13px - UI chrome */
+            --text-sm: 0.875rem;    /* 14px - labels */
+            --text-base: 1rem;      /* 16px - body */
+            --text-lg: 1.125rem;    /* 18px */
+            --text-xl: 1.618rem;    /* φ - subheadings */
+            --text-2xl: 2.618rem;   /* φ² - headings */
+            --text-3xl: 4.236rem;   /* φ³ - hero (if needed) */
+
+            /* Border radius - proportional */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-weight: 400;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === NAVIGATION === */
+        /* Small, unobtrusive - the "furniture" */
+        nav.container {
+            padding-top: var(--space-sm);
+            padding-bottom: var(--space-sm);
+        }
+        nav ul { margin: 0; }
+        nav li { font-size: var(--text-xs); }
+        nav strong {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        nav a:hover { color: var(--text-primary); text-decoration: none; }
+        nav a.contrast { color: var(--text-primary); }
+
+        /* === HERO === */
+        .hero {
+            text-align: center;
+            padding: var(--space-xl) 0 var(--space-2xl);
+        }
+        .hero h1 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin: 0 0 var(--space-xs);
+            color: var(--text-primary);
+        }
+        .hero p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            margin: 0;
+            font-weight: 300;
+        }
+        .hero .last-updated {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            margin-top: var(--space-sm);
+        }
+
+        /* === STAT CARDS === */
+        /* Floating cards with shadow, no border */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0 var(--space-xl);
+        }
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .stat-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-sm);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat-card h2 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            margin: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #d946ef, #fb923c);
+            background-attachment: fixed;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card p {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            margin: var(--space-xs) 0 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* === SECTION TITLES === */
+        /* Clean, no underline - spacing creates hierarchy */
+        .section-title {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin: var(--space-2xl) 0 var(--space-lg);
+            padding: 0;
+            border: none;
+        }
+
+        /* === CHART === */
+        /* Floating with glow for depth */
+        .chart-section {
+            display: flex;
+            justify-content: center;
+            padding: var(--space-lg) 0;
+        }
+        .chart-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+        /* Glow effect behind chart */
+        .chart-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(20px);
+        }
+        .chart-wrapper canvas {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* === TABLES === */
+        /* Minimal lines, generous spacing */
+        figure { margin: 0; }
+        table {
+            font-size: var(--text-base);
+            border-collapse: collapse;
+            width: 100%;
+        }
+        thead th {
+            font-size: var(--text-xs);
+            font-weight: 500;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: var(--space-sm) var(--space-xs);
+            border-bottom: 1px solid var(--border-subtle);
+            text-align: left;
+        }
+        tbody td {
+            padding: var(--space-sm) var(--space-xs);
+            border-bottom: 1px solid var(--border-subtle);
+            vertical-align: middle;
+        }
+        tbody tr {
+            transition: background-color 0.15s ease;
+        }
+        tbody tr:hover {
+            background-color: var(--bg-secondary);
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Table links */
+        table a {
+            color: var(--text-primary);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        table a:hover {
+            color: var(--accent);
+        }
+
+        /* Stars column */
+        .stars {
+            color: #f59e0b;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* === BADGES === */
+        /* Muted, subtle - not competing for attention */
+        .category-badge {
+            font-size: var(--text-xs);
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        .category-badge.infrastructure {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .category-badge.core-methods {
+            background: #dcfce7;
+            color: #15803d;
+        }
+        .category-badge.applications {
+            background: #fef3c7;
+            color: #a16207;
+        }
+
+        .trending-badge {
+            font-size: 0.625rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            margin-left: var(--space-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* === FOOTER === */
+        footer {
+            margin-top: var(--space-3xl);
+            padding: var(--space-xl) 0;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: var(--text-xs);
+            border-top: 1px solid var(--border-subtle);
+        }
+        footer strong {
+            color: var(--text-secondary);
+        }
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        /* === UTILITY === */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - small, unobtrusive -->
+    <nav class="container">
+        <ul><li><strong>FoldScape</strong></li></ul>
+        <ul>
+            <li><a href="index.html" class="contrast">Home</a></li>
+            <li><a href="tools.html">Browse All</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Hero - breathing room -->
+        <section class="hero">
+            <h1>FoldScape</h1>
+            <p>Daily-updated landscape of computational protein design & ML tools</p>
+            <p class="last-updated">Last updated: <span id="last-updated">February 10, 2026</span></p>
+        </section>
+
+        <!-- Stats - floating cards -->
+        <section class="stats-grid">
+            <article class="stat-card">
+                <h2 id="total-repos">64</h2>
+                <p>Total Tools</p>
+            </article>
+            <article class="stat-card">
+                <h2 id="trending-count">3</h2>
+                <p>Trending</p>
+            </article>
+            <article class="stat-card">
+                <h2 id="validated-count">12</h2>
+                <p>Validated</p>
+            </article>
+            <article class="stat-card">
+                <h2 id="total-stars">47.9k</h2>
+                <p>Total Stars</p>
+            </article>
+        </section>
+
+        <!-- Chart - with glow -->
+        <h2 class="section-title">Tools by Category</h2>
+        <section class="chart-section">
+            <div class="chart-wrapper">
+                <canvas id="category-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Top Tools Table -->
+        <h2 class="section-title">Top Tools by Stars</h2>
+        <figure>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Category</th>
+                        <th>Stars</th>
+                        <th>License</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody id="top-table-body">
+                    <tr>
+                        <td><a href="#">alphafold</a> <span class="trending-badge">Trending</span></td>
+                        <td><span class="category-badge core-methods">Core Methods</span></td>
+                        <td class="stars">13.2k</td>
+                        <td>Apache 2.0</td>
+                        <td>3y 8mo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">esm</a></td>
+                        <td><span class="category-badge core-methods">Core Methods</span></td>
+                        <td class="stars">3.1k</td>
+                        <td>MIT</td>
+                        <td>4y 2mo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">ColabFold</a></td>
+                        <td><span class="category-badge applications">Applications</span></td>
+                        <td class="stars">2.8k</td>
+                        <td>MIT</td>
+                        <td>2y 11mo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">openmm</a></td>
+                        <td><span class="category-badge infrastructure">Infrastructure</span></td>
+                        <td class="stars">2.1k</td>
+                        <td>MIT</td>
+                        <td>5y 4mo</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">RFdiffusion</a></td>
+                        <td><span class="category-badge core-methods">Core Methods</span></td>
+                        <td class="stars">1.9k</td>
+                        <td>BSD-3</td>
+                        <td>1y 6mo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+
+        <!-- Trending Section -->
+        <h2 class="section-title">Trending This Week</h2>
+        <figure>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Category</th>
+                        <th>7-Day Velocity</th>
+                    </tr>
+                </thead>
+                <tbody id="trending-table-body">
+                    <tr>
+                        <td><a href="#">alphafold3</a></td>
+                        <td><span class="category-badge core-methods">Core Methods</span></td>
+                        <td class="stars">+142 stars</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Boltz</a></td>
+                        <td><span class="category-badge core-methods">Core Methods</span></td>
+                        <td class="stars">+89 stars</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">BindCraft</a></td>
+                        <td><span class="category-badge applications">Applications</span></td>
+                        <td class="stars">+34 stars</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    </main>
+
+    <footer class="container">
+        <p>
+            <strong>FoldScape</strong> — Tracking the protein ML ecosystem<br>
+            Inspired by <a href="https://goodailist.com" target="_blank">Good AI List</a><br>
+            <small>Data sourced from GitHub. Updated daily.</small>
+        </p>
+    </footer>
+
+    <script>
+        // Demo chart with depth effect
+        const ctx = document.getElementById('category-chart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Core Methods', 'Infrastructure', 'Applications', 'Uncategorized'],
+                datasets: [{
+                    data: [28, 18, 14, 4],
+                    backgroundColor: [
+                        '#22c55e',  // green
+                        '#3b82f6',  // blue
+                        '#f59e0b',  // amber
+                        '#94a3b8'   // gray
+                    ],
+                    borderWidth: 3,
+                    borderColor: '#ffffff',
+                    hoverBorderWidth: 3,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 24,
+                            usePointStyle: true,
+                            pointStyle: 'circle',
+                            font: {
+                                family: "'Inter', sans-serif",
+                                size: 13,
+                                weight: 500
+                            },
+                            color: '#86868b'
+                        }
+                    }
+                },
+                animation: {
+                    animateRotate: true,
+                    animateScale: true
+                }
+            }
+        });
+    </script>
+</body>
+</html>

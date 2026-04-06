@@ -24,12 +24,17 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install PyGithub
+        run: pip install PyGithub huggingface_hub
 
-      - name: Run collector
+      - name: Run GitHub collector
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: python scripts/collectors/github_collector.py || echo "Collector failed, continuing..."
+        run: python scripts/collectors/github_collector.py || echo "GitHub collector failed, continuing..."
+
+      - name: Run HF collector
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python scripts/collectors/hf_collector.py || echo "HF collector failed, continuing..."
 
       - name: Categorize repos
         run: python scripts/categorize_repos.py

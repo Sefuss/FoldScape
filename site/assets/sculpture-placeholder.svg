@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="metal1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c0c8d0"/>
+      <stop offset="50%" stop-color="#8a9bae"/>
+      <stop offset="100%" stop-color="#5a6a7a"/>
+    </linearGradient>
+    <linearGradient id="metal2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4dce4"/>
+      <stop offset="50%" stop-color="#a0b0c0"/>
+      <stop offset="100%" stop-color="#6a7a8a"/>
+    </linearGradient>
+    <linearGradient id="metal3" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#b0bec8"/>
+      <stop offset="100%" stop-color="#4a5a6a"/>
+    </linearGradient>
+    <linearGradient id="cyan1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <linearGradient id="cyan2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#155e75"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Main peak - center -->
+    <polygon points="400,80 310,320 490,320" fill="url(#metal1)"/>
+    <polygon points="400,80 490,320 440,280" fill="url(#metal2)"/>
+    <!-- Left facet -->
+    <polygon points="400,80 310,320 260,260" fill="url(#metal3)"/>
+    <!-- Right peak -->
+    <polygon points="520,160 440,380 600,380" fill="url(#metal2)"/>
+    <polygon points="520,160 600,380 560,340" fill="url(#metal1)"/>
+    <!-- Left peak -->
+    <polygon points="280,180 200,380 360,380" fill="url(#metal3)"/>
+    <polygon points="280,180 200,380 240,340" fill="url(#metal2)"/>
+    <!-- Cyan accent facets -->
+    <polygon points="400,80 360,200 440,200" fill="url(#cyan1)" opacity="0.7"/>
+    <polygon points="520,160 490,240 550,240" fill="url(#cyan2)" opacity="0.5"/>
+    <!-- Base connecting facets -->
+    <polygon points="310,320 360,380 200,380" fill="url(#metal1)" opacity="0.6"/>
+    <polygon points="490,320 440,380 600,380" fill="url(#metal2)" opacity="0.6"/>
+    <polygon points="310,320 490,320 440,380 360,380" fill="url(#metal3)" opacity="0.4"/>
+    <!-- Forward shard -->
+    <polygon points="380,260 420,260 430,400 370,400" fill="url(#metal1)" opacity="0.5"/>
+    <polygon points="380,260 420,260 400,220" fill="url(#cyan1)" opacity="0.3"/>
+  </g>
+</svg>

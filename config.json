@@ -8,6 +8,29 @@
     "days_back": 7,
     "threshold": 10
   },
+  "huggingface": {
+    "search_keywords": [
+      "protein", "ESM", "ESM-2", "ProteinMPNN", "AlphaFold",
+      "ProtT5", "ProteinGLM", "RFdiffusion", "protein design",
+      "protein structure", "inverse folding", "protein language model",
+      "antibody", "UniProt", "PDB", "molecular structure"
+    ],
+    "relevance_keywords": [
+      "protein", "antibody", "folding", "alphafold", "esm",
+      "rosetta", "amino acid", "pdb", "sequence", "binder",
+      "proteinmpnn", "prott5", "molecular", "structure prediction",
+      "proteingpt", "protgpt", "progen", "uniprot"
+    ],
+    "limit_per_query": 200,
+    "recent_days": 7,
+    "crosslinks": {
+      "Rostlab/prot_t5_xl_uniref50": "agemagician/ProtTrans",
+      "Rostlab/prot_bert_bfd": "agemagician/ProtTrans",
+      "Rostlab/ProstT5": "mheinzinger/ProstT5",
+      "westlake-repl/SaProt_650M_AF2": "westlake-repl/SaProtHub",
+      "westlake-repl/SaProt_650M_PDB": "westlake-repl/SaProt"
+    }
+  },
   "categories": {
     "_comment": "Order matters: first match wins. Check Applications first (specific), then Core, then Infra.",
     "keywords": {
