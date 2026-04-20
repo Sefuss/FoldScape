@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-04-20T07:49:21.167345+00:00",
+  "source": "huggingface",
+  "models_scanned": 0,
+  "linked_to_github": 0,
+  "new_hf_only": 0,
+  "total_repos_after": 67,
+  "keywords_used": [
+    "protein",
+    "ESM",
+    "ESM-2",
+    "ProteinMPNN",
+    "AlphaFold",
+    "ProtT5",
+    "ProteinGLM",
+    "RFdiffusion",
+    "protein design",
+    "protein structure",
+    "inverse folding",
+    "protein language model",
+    "antibody",
+    "UniProt",
+    "PDB",
+    "molecular structure"
+  ]
+}
