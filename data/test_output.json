@@ -5,7 +5,7 @@
       "name": "alphafold",
       "description": "Open source code for AlphaFold 2.",
       "url": "https://github.com/google-deepmind/alphafold",
-      "stars": 14568,
+      "stars": 14572,
       "forks": 2613,
       "last_updated": "2026-04-22T17:58:21+00:00",
       "created_at": "2021-06-17T14:06:06+00:00",
@@ -26,7 +26,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-08T07:12:08.593421",
+      "first_tracked": "2026-05-09T07:28:39.546616",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -38,8 +38,8 @@
       "name": "alphafold3",
       "description": "AlphaFold 3 inference pipeline.",
       "url": "https://github.com/google-deepmind/alphafold3",
-      "stars": 7956,
-      "forks": 1201,
+      "stars": 7962,
+      "forks": 1203,
       "last_updated": "2026-05-06T13:59:39+00:00",
       "created_at": "2024-11-11T10:38:11+00:00",
       "language": "Python",
@@ -59,7 +59,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-08T07:12:10.213549",
+      "first_tracked": "2026-05-09T07:28:41.159027",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -96,7 +96,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-08T07:12:11.881055",
+      "first_tracked": "2026-05-09T07:28:42.858577",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -136,7 +136,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-08T07:12:13.511631",
+      "first_tracked": "2026-05-09T07:28:44.431935",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -186,7 +186,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-08T07:12:15.158877",
+      "first_tracked": "2026-05-09T07:28:46.029382",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
