@@ -5,8 +5,8 @@
       "name": "alphafold",
       "description": "Open source code for AlphaFold 2.",
       "url": "https://github.com/google-deepmind/alphafold",
-      "stars": 14599,
-      "forks": 2620,
+      "stars": 14600,
+      "forks": 2621,
       "last_updated": "2026-04-22T17:58:21+00:00",
       "created_at": "2021-06-17T14:06:06+00:00",
       "language": "Python",
@@ -26,7 +26,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-19T08:53:37.146770",
+      "first_tracked": "2026-05-20T08:49:07.321344",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -38,9 +38,9 @@
       "name": "alphafold3",
       "description": "AlphaFold 3 inference pipeline.",
       "url": "https://github.com/google-deepmind/alphafold3",
-      "stars": 8040,
-      "forks": 1219,
-      "last_updated": "2026-05-06T13:59:39+00:00",
+      "stars": 8044,
+      "forks": 1223,
+      "last_updated": "2026-05-19T15:19:05+00:00",
       "created_at": "2024-11-11T10:38:11+00:00",
       "language": "Python",
       "license": "Other",
@@ -59,7 +59,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-19T08:53:38.792748",
+      "first_tracked": "2026-05-20T08:49:08.921232",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -96,7 +96,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-19T08:53:40.448183",
+      "first_tracked": "2026-05-20T08:49:10.604947",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -136,7 +136,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-19T08:53:42.081599",
+      "first_tracked": "2026-05-20T08:49:12.192219",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
@@ -186,7 +186,7 @@
       "output_formats": []
     },
     "tracking": {
-      "first_tracked": "2026-05-19T08:53:43.802808",
+      "first_tracked": "2026-05-20T08:49:13.782450",
       "star_velocity_7d": 0,
       "star_velocity_30d": 0,
       "trending": false
